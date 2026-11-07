@@ -45,7 +45,7 @@
       "name": "g++ - Build and Debug active folder",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+      "program": "${fileDirname}/main.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
@@ -77,10 +77,13 @@
       "label": "C/C++: g++ build active folder",
       "command": "/usr/bin/g++",
       "args": [
-        "-g",
+        "-g3",
+        "-O0",
+        "-fno-omit-frame-pointer",
+        "-std=c++20",
         "${fileDirname}/*.cpp",
         "-o",
-        "${fileDirname}/${fileBasenameNoExtension}.exe"
+        "${fileDirname}/main.exe"
       ],
       "options": {
         "cwd": "${fileDirname}"
@@ -103,10 +106,7 @@
       "type": "shell",
       "label": "Run Suite of Tests",
       "command": "${workspaceFolder}/.vscode/run_tests.sh",
-      "args": [
-        "${fileDirname}/${fileBasenameNoExtension}.exe",
-        "${fileDirname}"
-      ],
+      "args": ["${fileDirname}/main.exe", "${fileDirname}"],
       "dependsOn": ["C/C++: g++ build active folder"],
       "problemMatcher": [],
       "presentation": {
