@@ -1,0 +1,1 @@
+Ворую лабы [отсюда](https://github.com/bmstu-software-engineering/fork-Lesa-yps-Operating_Systems_5_sem_BMSTU/tree/main).
